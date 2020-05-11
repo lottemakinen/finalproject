@@ -1,18 +1,8 @@
-
-def main():
-
-	weeks = input("For how many weeks do you have hours? ")
-	weeks_int = int(weeks)
-	counter = 1
-	hours_file = open ("hours.txt", "a")
-
-
-#silmukka, joka toistetaan viikkojen verran
-	while weeks_int > 0:
-        	this_week = input("Enter the hours for week #" + str(counter) + ": " )
-        	counter = counter + 1
-        	weeks_int = weeks_int - 1
-        	hours_file.write(this_week + "\n")
-	hours_file.close()
-	print("You worked x hours" )
+def main():	
+	hours_list = []
+	weeks = int(input("How many weeks you have been working? "))
+	for n in range(weeks):
+		hours = int(input("Enter your work hours of the week: "))
+		hours_list.append(hours)
+	print("Hours worked: ", sum(hours_list))
 main()
